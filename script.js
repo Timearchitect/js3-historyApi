@@ -1,11 +1,8 @@
+let content = document.getElementById('content')
+let home = document.getElementById('home')
+let contact = document.getElementById('contact')
 
-
-let content=document.getElementById("content")
-let home=document.getElementById("home")
-let contact=document.getElementById("contact")
-
-
-window.onload =  fetchHtml("home")
+window.onload = fetchHtml('home')
 /* window.addEventListener("popstate", (event) => {
     alert(
       `location: ${document.location}, state: ${JSON.stringify(event.state)}`,
@@ -13,37 +10,39 @@ window.onload =  fetchHtml("home")
   });
  */
 
-  window.onpopstate = function(event) {
-    if(event){
-        
-        alert(window.location.pathname)
-
-      // Code to handle back button or prevent from navigation
+window.addEventListener('popstate', (event) => {
+    /*     alert(
+      `location: ${document.location}, state: ${JSON.stringify(event.state)}`,
+    ); */
+    switch (event.state.page) {
+        case 1:
+            fetchHtml('home')
+            break
+        case 2:
+            fetchHtml('contact')
+            break
+        default:
+            fetchHtml('home')
     }
-    else{
-      // Continue user action through link or button
-    }
-  }
-
-
-
-home.addEventListener('click',(e)=>{
-    e.preventDefault
-    history.pushState({ page: 1 }, "home", "home")
-    fetchHtml("home")
 })
-contact.addEventListener('click',(e)=>{
+
+home.addEventListener('click', (e) => {
+    e.preventDefault
+    history.pushState({ page: 1 }, 'home', 'home')
+    fetchHtml('home')
+})
+contact.addEventListener('click', (e) => {
     e.preventDefault
 
-    history.pushState({ page: 2 }, "contact", "contact")
-    fetchHtml("contact")
+    history.pushState({ page: 2 }, 'contact', 'contact')
+    fetchHtml('contact')
 })
-function fetchHtml(filename) { 
+function fetchHtml(filename) {
     fetch(`./${filename}.html`)
         .then((response) => {
             return response.text()
         })
-         .then((html) => {
+        .then((html) => {
             content.innerHTML = html
-        }) 
+        })
 }
