@@ -2,7 +2,8 @@
 <html lang="en">
     <head>
         <script type="text/javascript">
-            window.location.href = window.location.origin
+              if (window.location.href.split('\/').length > 4) window.location.href = window.location.origin + window.location.pathname
+              else window.location.href = window.location.origin
         </script>
     </head>
 </html>
