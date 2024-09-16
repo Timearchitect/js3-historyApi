@@ -5,7 +5,7 @@
  -->
         <script type="text/javascript">
             //console.log(window.location.href)
-            if (window.location.href.split('\/').length > 4) window.location.href = window.location.origin + window.location.pathname
+            if (window.location.href.split('\/').length > 4) window.location.origin + "/"+window.location.pathname.split("\/")[1]
             else window.location.href = window.location.origin
         </script>
     </head>
