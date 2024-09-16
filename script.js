@@ -1,3 +1,4 @@
+'use strict'
 let content = document.getElementById('content')
 let home = document.getElementById('home')
 let contact = document.getElementById('contact')
@@ -24,6 +25,16 @@ window.addEventListener('popstate', (event) => {
         default:
             fetchHtml('home')
     }
+
+    if (1 + 1 == 2) 
+        console.log(1)
+    else if (true) 
+        console.log(1)
+    else if (true) 
+        console.log(1)
+     else 
+        console.log(1)
+    
 })
 
 home.addEventListener('click', (e) => {
@@ -46,3 +57,5 @@ function fetchHtml(filename) {
             content.innerHTML = html
         })
 }
+
+function name(params = 5) {}
