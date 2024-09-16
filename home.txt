@@ -1,0 +1,6 @@
+<div>
+    <h1>HOME</h1>
+   <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro nulla repellendus est doloremque sed aliquam fuga sunt. A doloribus quam corrupti in tenetur atque iure, sint placeat non? Ad, aut!
+   </p>
+</div>

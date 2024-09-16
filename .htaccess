@@ -1,0 +1,4 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^http://127.0.0.1:5500 [NC]
+RewriteRule ^(.*)$ http://127.0.0.1:5500/$1 [L,R=301]

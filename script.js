@@ -39,17 +39,17 @@ window.addEventListener('popstate', (event) => {
 
 home.addEventListener('click', (e) => {
     e.preventDefault
-    history.pushState({ page: 1 }, 'home', 'home')
+    history.pushState({ page: 1 }, 'home', 'home.html')
     fetchHtml('home')
 })
 contact.addEventListener('click', (e) => {
     e.preventDefault
 
-    history.pushState({ page: 2 }, 'contact', 'contact')
+    history.pushState({ page: 2 }, 'contact', 'contact.html')
     fetchHtml('contact')
 })
 function fetchHtml(filename) {
-    fetch(`./${filename}.html`)
+    fetch(`./${filename}.txt`)
         .then((response) => {
             return response.text()
         })
