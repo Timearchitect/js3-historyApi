@@ -1,4 +1,4 @@
-<div>
+<div class="magentaBG">
     <h1>CONTACT FORM</h1>
     <form>
         <input type="text" name="" id="" />
