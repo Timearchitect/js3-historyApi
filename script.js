@@ -3,7 +3,7 @@ let content = document.getElementById('content')
 let home = document.getElementById('home')
 let contact = document.getElementById('contact')
 
-let lastLocation = localStorage.getItem("route")
+let lastLocation = localStorage.getItem("route") //senaste sida
 window.onload = fetchHtml(lastLocation==null?"home":lastLocation )
 localStorage.removeItem("route")
 /* window.addEventListener("popstate", (event) => {
