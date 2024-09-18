@@ -3,7 +3,9 @@ let content = document.getElementById('content')
 let home = document.getElementById('home')
 let contact = document.getElementById('contact')
 
-window.onload = fetchHtml('home')
+let lastLocation = localStorage.getItem("route")
+window.onload = fetchHtml(lastLocation==null?"home":lastLocation )
+localStorage.removeItem("route")
 /* window.addEventListener("popstate", (event) => {
     alert(
       `location: ${document.location}, state: ${JSON.stringify(event.state)}`,
